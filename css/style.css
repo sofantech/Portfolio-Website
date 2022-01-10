@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,300;1,200&display=swap');
+/*############ start global item###############*/
+:root
+{
+    --mainColor:#0E1630;
+    --secondColor:#808DAD;
+    --redColor:#EB4A4A;
+    --whiteColor:#fff;
+    --shadow-black-100:0 5px 15px #808DAD;
+    --transparentBordercolor:#808dad2e;
+
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Public Sans', sans-serif;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+html
+{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+    overflow-x: hidden;
+}
+img
+{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+body
+{
+    overflow-x: hidden;
+    background: var(--mainColor);
+    color: var(--whiteColor);    
+
+}
+section
+{
+    padding: 3rem 9%;
+}
+ul
+{
+    list-style: none;
+}
+a
+{
+    color: var(--secondColor);
+}
+a:hover,
+li.active a
+{
+    color: var(--redColor);
+    cursor: pointer;
+}
+.btn
+{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: var(--redColor);
+    border: 0.2rem solid var(--redColor);
+    border-radius: 2.5rem;
+    cursor: pointer;
+    background: none;
+}
+.btn:hover
+{
+    color: var(--whiteColor);
+    border: 0.2rem solid var(--whiteColor);
+
+}
+/*############ end global item###############*/
+
+/* ###########start header ##################*/
+.header
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 9%;
+    min-height: 8rem;
+    z-index: 1000;
+    /* background: var(--mainColor) ; */
+    border-bottom: 0.1rem solid var(--transparentBordercolor);
+    
+}
+.header .menu-btn
+{
+    display: none;
+}
+.header .logo a
+{
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--whiteColor);
+    padding-right: 0.5rem;
+}
+.header .logo .tech
+{
+    color: var(--redColor);
+    font-size: 3rem;
+}
+.header .navbar
+{
+
+}
+.header li 
+{
+    position: relative;
+    display: inline-block;
+    /* padding: 1rem 1rem; */
+    margin-left: 3rem;
+}
+.header li a
+{
+    font-size: 1.7rem;
+    font-weight: 600;
+    display: block;
+    padding: 1rem 0;
+}
+
+.header .navBar li span
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 5rem;
+    width: 0%;
+    height: 0.2rem;
+    background: var(--whiteColor);
+    opacity: 0;
+    visibility: hidden;
+
+}
+.header .navBar li:hover span,
+.header .navBar li.active span
+{
+    width: 60%;
+    opacity: 1;
+    visibility: visible;
+}
+.header .navBar li span::before
+{
+    content: "";
+    width: 0%;
+    height: .2rem;
+    background: var(--redColor);
+    position: absolute;
+    left: 110%;
+    
+}
+.header .navBar li:hover span::before,
+.header .navBar li.active span::before
+{
+    width: 20%;
+}
+.header .navBar li span::after
+{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: .2rem;
+    background-color: var(--whiteColor);
+    left: 140%;
+}
+.header .navBar li:hover span::after,
+.header .navBar li.active span::after
+{
+    width: 15%;
+}
+.header .phoneNumber
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 1.7rem;
+}
+.header .phoneNumber .seprator
+{
+    margin: 0 2rem;
+}
+.header .phoneNumber i
+{
+    padding: 0rem 1rem;
+}
+
+/* ###########end header ##################*/
+
+/* ###########start home ##################*/
+.home
+{
+    height: 100vh;
+    margin-top: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url(../images/svg/Colored\ Patterns.svg);
+}
+.home .txt-content,
+.home .image
+{
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 3rem;
+
+}
+.home .image
+{
+    background-color: var(--secondColor);
+    border-radius: 5rem;
+    height: 70%;
+    overflow: hidden;
+    padding: 0;
+
+}
+.home .txt-content .hello 
+{
+    position: relative;
+    margin-left: 2.5rem;
+}
+.home .txt-content .hello .separate
+{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 2rem; 
+    height: 0.2rem;
+    margin-left: -2.5rem;
+    display: inline-block;
+    background: var(--redColor);
+
+} 
+.home .txt-content .hello span
+{
+    
+}
+.home .txt-content h4
+{
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.7;
+    letter-spacing: .4rem;
+}
+.home .txt-content h2
+{
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.7;
+    margin-top: 1.5rem;
+}
+.home .txt-content p
+{
+    font-size: 1.7rem;
+    line-height: 1.7;
+    font-weight: 400;
+    margin-top: 1.5rem;
+}
+.home .txt-content .button
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 1.5rem;
+}
+/* ########### end home ##################*/
+
+/* ########### start about ##################*/
+.about-me
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.about-me .skils,
+.about-me .experence
+{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.about-me h4
+{
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.7;
+}
+.about-me p
+{
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.7;
+}
+.about-me ul
+{
+    display: flex;
+    flex-direction: column;
+}
+.about-me ul li
+{
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    font-size: 1.6rem;
+}
+.about-me ul li >i
+{
+    color: var(--redColor);
+}
+/* ########### end about ##################*/
+/* ########### start services ##################*/
+.services .heding
+{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.services .heding span
+{
+    color: var(--redColor);
+}
+.services .box-container 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+.services .box-container .box
+{
+    background: var(--secondColor);
+    border-radius: 1rem;
+    padding: 3rem;
+    text-align: center;
+    border: 0.1rem solid var(--redColor);
+}
+/* ########### end services ##################*/
+
+/* ########### start contact ##################*/
+
+/* ########### end contact ##################*/
+/* ########### start footer ##################*/
+.footer
+{
+    padding: 2rem 0;
+    background: var(--secondColor);
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    
+}
+/* ########### end footer ##################*/

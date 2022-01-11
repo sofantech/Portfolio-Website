@@ -223,6 +223,8 @@ li.active a
     justify-content: space-between;
     flex-wrap: wrap;
     background: url(../images/svg/Colored\ Patterns.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .home .txt-content
 {
@@ -782,6 +784,7 @@ li.active a
     .home
     {
         height: auto;
+        background-position: 100% 100%;
         
     }
     .home .txt-content
@@ -838,6 +841,10 @@ li.active a
     {
         margin-bottom: 2.5rem;
         text-align: center;
+    }
+    .contact .box-container .social-media-box p 
+    {
+        padding: 1.5rem 0;
     }
     
 

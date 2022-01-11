@@ -245,6 +245,8 @@ li.active a
 .home .image img
 {
     filter: brightness(0.8);
+    position: relative;
+    animation: top-down-move 5s linear infinite;
 }
 .home .txt-content .hello 
 {
@@ -729,6 +731,22 @@ li.active a
     
 }
 /* ########### end footer ##################*/
+
+
+/* ########### start animation  ##################*/
+@keyframes top-down-move
+{
+    0%,100%
+    {
+        top: 0;
+    }
+    50%
+    {
+        top: -5rem;
+    }
+}
+
+/* ########### end animation ##################*/
 @media (max-width:768px){
 
     html{

@@ -12,21 +12,23 @@
     <title>Portfolio</title>
 </head>
 <body>
-    <header class="header">
-        <div class="menu-btn">
-            <i class=""></i>
-        </div>
+    <header class="header header-with-scrol">
+        
         <div class="logo">
             <a>Sofan<span class="tech">Tec</span></a>
         </div>
         <nav class="navBar">
             <ul>
-                <li class="active"><a href="#">Home <span></span></a></li>
-                <li><a href="#">About <span></span></a></li>
-                <li><a href="#">Services <span></span></a></li>
-                <li><a href="#">Contact Me <span></span></a></li>
+                <li class="active"><a href="#home">Home <span></span></a></li>
+                <li><a href="#about">About <span></span></a></li>
+                <li><a href="#services">Services <span></span></a></li>
+                <li><a href="#ourWorks">our works <span></span></a></li>
+                <li><a href="#contact">Contact Me <span></span></a></li>
             </ul>
         </nav>
+        <div class="menu-btn">
+            <i class="ri-menu-line"></i>
+        </div>
         <div class="phoneNumber">
             <span class="seprator">|</span>
             <i class="ri-phone-fill"></i>
@@ -34,7 +36,7 @@
         </div>
     </header>
     <!-- ###### start home section ##########-->
-    <section class="home">
+    <section class="home" id="home">
         <div class="txt-content">
             <div class="hello">
                 <span class="separate"></span>
@@ -45,89 +47,226 @@
             <P>Full Stack Web Developer</P>
             <div class="button">
                 <button class="btn">Hire Me</button>
-                <button class="btn">Download Cv</button>
+                <button class="btn">Download Cv <i class="ri-download-2-fill"></i></button>
             </div>
         </div>
         <div class="image">
-            <img src="images/hadi.png" alt="Eng.hadi ahmed">
+            <img src="images/profile/profile-pic (14).png" alt="Eng.hadi ahmed">
         </div>
     </section>
     <!-- ###### start home section ##########-->
 
     <!-- ###### start about section ##########-->
-    <section class="about-me">
-        <div class="skils">
-            <h4>skills</h4>
-            <p>Lorem ipsum dolor sit, amet consectetur , Lorem ipsum dolor sit, amet consectetur</p>
-            <ul class="skills">
-                <li><i class="ri-html5-line"></i>html</li>
-                <li><i class="ri-css3-line"></i>css</li>
-                <li><i class="ri-reactjs-line"></i>javascript</li>
-                <li><i class="ri-paragraph"></i>php</li>
-            </ul>
-        </div>
-        <div class="experence">
-            <h4>experence</h4>
-            <p>Lorem ipsum dolor sit, amet consectetur , Lorem ipsum dolor sit, amet consectetur</p>
-            <ul class="exper">
-                <li><i class="ri-chat-check-fill"></i>proplem solving</li>
-                <li><i class="ri-chat-check-fill"></i>creative idea</li>
-                <li><i class="ri-chat-check-fill"></i>seo</li>
-                <li><i class="ri-chat-check-fill"></i>bug fixes</li>
-    
+    <section class="about" id="about">
+        <div class="main-header">
+            <h2 class="main-title">About Me</h2>
+            <ul class="line">
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
 
         </div>
-        
+        <div class="about-me">
+            <div class="about-image">
+                <div class="img-box">
+                    <img src="images/profile/profile-pic (19).png">
+                </div>
+                <div class="image-shape"></div>
+            </div>
+            <div class="about-content">
+                <div class="title-section">
+                    <!-- <h5 class="sub-header">About ?</h5> -->
+                    <h3 class="main-title">Why You Hire Me?</h3>
+                    <ul class="line">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+    
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eum dolorum, </p>
+                <div class="progress-skils">
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <h6 class="progress-item-header">Html5 Css3</h6>
+                            <div class="skill-persentage">
+                                <p>
+                                    <span class="counter">90</span>
+                                    %
+                                </p>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="bar-inner">
+                                <div class="bar progress-line" style="width: 90%;" data-progres="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <h6 class="progress-item-header">javascript</h6>
+                            <div class="skill-persentage">
+                                <p>
+                                    <span class="counter">70</span>
+                                    %
+                                </p>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="bar-inner">
+                                <div class="bar progress-line" style="width: 70%;" data-progres="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <h6 class="progress-item-header">Bootstrap</h6>
+                            <div class="skill-persentage">
+                                <p>
+                                    <span class="counter">80</span>
+                                    %
+                                </p>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="bar-inner">
+                                <div class="bar progress-line" style="width: 80%;" data-progres="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <h6 class="progress-item-header">Php</h6>
+                            <div class="skill-persentage">
+                                <p>
+                                    <span class="counter">60</span>
+                                    %
+                                </p>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="bar-inner">
+                                <div class="bar progress-line" style="width: 60%;" data-progres="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>   
+        </div>
     </section>
     <!-- ###### end about section ##########-->
 
     <!-- ###### start services section ##########-->
-    <section class="services">
+    <section class="services" id="services">
         <div class="heding">
             <span>our services</span>
             <h2>We offer All about design and programming</h2>
         </div>
         <div class="box-container">
-            <div class="box">
-                <i class=""></i>
-                <h4>web design</h4>
-                <p>introduct All about design and programming</p>
+            <div class="service-box">
+                <div class="box">
+                    <div class="service-icon">
+                        <i class="ri-macbook-fill"></i>
+                    </div>
+                    <h4>web design</h4>
+                    <p>Web site design and programming</p>
+                </div>
             </div>
-            <div class="box">
-                <i class=""></i>
-                <h4>web design</h4>
-                <p>introduct All about design and programming</p>
+            <div class="service-box">
+                <div class="box">
+                    <div class="service-icon">
+                        <i class="ri-brush-fill"></i>
+                    </div>
+                    <h4>Mobile App</h4>
+                    <p>introduct All about design and programming</p>
+                </div>
             </div>
-            <div class="box">
-                <i class=""></i>
-                <h4>web design</h4>
-                <p>introduct All about design and programming</p>
+            <div class="service-box">
+                <div class="box">
+                    <div class="service-icon">
+                        <i class="ri-bug-2-fill"></i>
+                    </div>
+                    <h4>bug fixes</h4>
+                    <p>fixes Errors caused by design or programming</p>
+                </div>
             </div>
-            <div class="box">
-                <i class=""></i>
-                <h4>web design</h4>
-                <p>introduct All about design and programming</p>
+            <div class="service-box">
+                <div class="box">
+                    <div class="service-icon">
+                        <i class="ri-search-eye-fill"></i>
+                    </div>
+                    <h4>seo</h4>
+                    <p>Search Engine Optimization</p>
+                </div>
             </div>
         </div>
         
     </section>
     <!-- ###### end services section ##########-->
 
-    <!-- ###### start contact section ##########-->
-    <section class="contact">
-        <div class="box-container">
+    <!-- ###### start our work section ##########-->
+    <section class="our-work" id="ourWorks">
+        <div class="main-header">
+            <h2 class="main-title">Our Work</h2>
+            <ul class="line">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="work-container">
             <div class="box">
-                <a class="facebook">facebook</a>
-                <a class="twitter">twitter</a>
-                <a class="linkedin">linkedin</a>
-                <a class="github">github</a>
+                <div class="image">
+                    <img src="images/our work/our work three.png">
+                </div>
             </div>
             <div class="box">
+                <div class="image">
+                    <img src="images/our work/our work four.png">
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/our work/our-work-two.png">
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/our work/portfolio-4.jpg">
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="images/our work/portfolio-2.jpg">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- ###### end our work section ##########-->
+
+    <!-- ###### start contact section ##########-->
+    <section class="contact" id="contact">
+        <div class="box-container">
+            <div class="social-media-box">
+                <a class="#"><i class="ri-stackshare-fill"></i>contact </a>
+                <p>You can find us on social media</p>
+                <div class="social-links">
+                    <a href="#" class="ri-facebook-circle-fill"></a>
+                    <a href="#" class="ri-twitter-fill"></a>
+                    <a href="#" class="ri-github-fill"></a>
+                    <a href="#" class="ri-linkedin-fill"></a>
+                </div>
+            </div>
+            <div class="form-box">
                 <form>
-                    <input type="email">
-                    <input type="text">
-                    <button class="btn"></button>
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Email Address">
+                    <input type="text" placeholder="Subject">
+                    <textarea placeholder="Message"></textarea>
+                    <input type="submit" class="btn send" value="send"></button>
                 </form>
             </div>
         </div>
@@ -139,8 +278,9 @@
      </footer>
      <!-- ###### end footer##########-->
 
+     <script src="js/script.js">
+    </script>
     
 </body>
-<script src="js/script.js">
-</script>
+
 </html>

@@ -235,7 +235,6 @@ li.active a
 {
     flex: 0 0 40%;
     max-width: 40%;
-    background-color: var(--secondColor);
     border-radius: 5rem;
     overflow: hidden;
     padding: 0;

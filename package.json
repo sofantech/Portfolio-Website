@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "this project challenge in rowad coding academy",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sofantech/Portfolio-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sofantech/Portfolio-Website/issues"
+  },
+  "homepage": "https://github.com/sofantech/Portfolio-Website#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2"
+  }
+}

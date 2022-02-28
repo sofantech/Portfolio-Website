@@ -123,14 +123,14 @@ li.active a
 {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
-.header .logo a
+.logo a
 {
     font-size: 2.5rem;
     font-weight: 800;
     color: var(--whiteColor);
     padding-right: 0.5rem;
 }
-.header .logo .tech
+.logo .tech
 {
     color: var(--redColor);
     font-size: 3rem;
@@ -908,4 +908,27 @@ li.active a
         gap: 1rem;
     }
 
+}
+
+.bg-image-vertical 
+{
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+}
+.border-frm
+{
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+  
+@media (min-width: 1025px) 
+{
+    .h-custom-2 
+    {
+        height: 100%;
+    }
 }

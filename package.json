@@ -1,26 +1,25 @@
 {
-  "name": "portfolio-website",
-  "version": "1.0.0",
-  "description": "this project challenge in rowad coding academy",
-  "main": "server.js",
+  "name": "portfolioproject",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sofantech/Portfolio-Website.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sofantech/Portfolio-Website/issues"
-  },
-  "homepage": "https://github.com/sofantech/Portfolio-Website#readme",
   "dependencies": {
-    "ejs": "^3.1.6",
-    "express": "^4.17.2",
-    "nodemon": "^2.0.15"
-  },
-  "devDependencies": {},
-  "keywords": []
+    "bcrypt": "^5.0.1",
+    "bcrypt-nodejs": "^0.0.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "http-errors": "~1.6.3",
+    "mongoose": "^6.2.3",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.4",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  }
 }

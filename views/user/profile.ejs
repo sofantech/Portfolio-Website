@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="hadi ahmed">
+    <meta name="description" content="jobs-site">
+    <meta name="keywoard" content="html , css , js,bootstrap,jquery">
+    <title>dashboard</title>
+    <link rel="stylesheet" href="/admin/fonts/remixicon.css">
+    <link rel="stylesheet" href="/admin/css/bootstrap.css">
+    <link rel="stylesheet" href="/admin/css/style.css">
+</head>
+<body>
+   <!--start dashboard-->
+   <div class="row sidbare">
+     <aside class="col-md-4">
+        <div class="logo-details text-center">
+          <i class='bx bxl-c-plus-plus'></i>
+          <span class="logo_name"> dashBoard</span>
+        </div>
+        <ul class="nav-links">
+          <li class="active">
+            <a href="dashboard-personal-info.html" >
+              <span class="links_name">personal Info</span>
+            </a>
+          </li>
+          <li>
+            <a href="/users/skills">
+              <span class="links_name">skills</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard-person-skills.html">
+              <span class="links_name">services</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard-person-qualification.html">
+              <span class="links_name">our Works</span>
+            </a>
+          </li>
+          <% if(!user) { %> 
+          <li class="log_in">
+            <a href="/users/login">
+              <span class="links_name">logIn </span>
+            </a>
+          </li>
+          <li class="log_out">
+            <a href="/users/signin">
+              <span class="links_name">signup </span>
+            </a>
+          </li>
+          <% } else { %> 
+          <li class="signup">
+            <a href="/users/logout">
+              <span class="links_name">logout </span>
+            </a>
+          </li>
+          <% } %> 
+        </ul>
+     </aside>
+     <div class="dashboard-section col-md-8">
+       <div class="row">
+          <nav>
+            <div class="sidebar-button">
+              <span class="dashboard">dashBoard</span>
+            </div>
+            <div class="profile-details">
+              <img src="<%= '/images/' + user.avatar%>" alt="">
+              <span class="admin_name">
+                <% if(user){ %> 
+                  <%= user.name %> 
+               <% } %>
+              </span>
+            </div>
+          </nav>
+       </div>
+       <div class="row mt-4">
+         <div class="col-sm-3">
+           <img src="<%= '/images/' + user.avatar%>" style="width: 150px; height: 150px; border-radius: 50%;">
+           <br>
+           <br>
+         </div>
+        <div class="col-md-9 ">
+          <div class="personal-info">
+            <h3>personal information</h3>
+            <form action="/users/uploadavtar" method="post" enctype="multipart/form-data">
+              <input type="text" class="form-control form-control-lg" name="name" placeholder="useremail" value="<% if(user){ %> 
+                <%= user.name %> 
+             <% } %>">
+              <input type="email" class="form-control form-control-lg" name="email" placeholder="user Email" value="<% if(user){ %> 
+                <%= user.email %> 
+                <% } %>">
+              <input type="password" class="form-control form-control-lg" name="password" placeholder="password" value="<% if(user){ %> 
+                <%= user.password %> 
+                <% } %>">
+              <hr>
+              <input type="file" class="avtar" id="avtar" name="avatar">
+              <button type="submit" class="btn btn-primary">upload</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+     </div>
+   </div>
+    
+    <!--end dashboard-->
+
+    
+    <script src="/admin/js/bootstrap.js"></script>
+    <script src="/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="/admin/js/popper.min.js"></script>
+    <script src="/admin/js/script.js"></script>
+</body>
+</html>

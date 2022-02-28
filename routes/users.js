@@ -183,7 +183,11 @@ router.get('/logout',(req,res)=>{
 })
 
 
-
+//services 
+router.get('/services',(req,res)=>{
+  
+  res.render('user/services');
+})
 
 
 

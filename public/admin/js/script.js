@@ -3,6 +3,13 @@ let profile_details=document.querySelector(".profile-details");
 let prof_img=document.querySelector("#prof_img");
 let inputfile=document.querySelector("#in-file");
 let changeimgbtn=document.querySelector("#changeimgbtn");
+let toggle_list=document.querySelector("#toggle-list");
+let toggle_icon=document.querySelector("#toggle-icon");
+toggle_icon.onclick=function () {
+  // menu_btn.classList.toggle("");
+  toggle_list.classList.toggle("active");
+  
+}
 profile_details.addEventListener('mouseenter',()=>{
   changeimgbtn.style.display="block";
 });
@@ -25,3 +32,4 @@ inputfile.addEventListener('change',()=>{
   
   
 });
+

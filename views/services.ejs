@@ -1,0 +1,73 @@
+<!-- ###### start services section ##########-->
+<section class="services" id="services">
+    <div class="heding">
+        <span>our services</span>
+        <h2>We offer All about design and programming</h2>
+    </div>
+    <div class="box-container">
+        <% chunk.forEach(element => { %>
+        <% element.forEach(e => { %>
+        <div class="service-box">
+            <div class="box">
+                <div class="service-icon">
+                    <i class="ri-macbook-fill"></i>
+                </div>
+                <h4><%= e.title %> </h4>
+                <p><%= e.description %></p>
+            </div>
+        </div>
+        <% }) %> 
+        <% }) %>
+    </div>
+     
+     
+      
+      <!-- <div class="service-box">
+          <div class="box">
+              <div class="service-icon">
+                  <i class="ri-macbook-fill"></i>
+              </div>
+              <h4>web design</h4>
+              <p>Web site design and programming</p>
+          </div>
+      </div>
+      <div class="service-box">
+          <div class="box">
+              <div class="service-icon">
+                  <i class="ri-macbook-fill"></i>
+              </div>
+              <h4>web design</h4>
+              <p>Web site design and programming</p>
+          </div>
+      </div>
+      <div class="service-box">
+          <div class="box">
+              <div class="service-icon">
+                  <i class="ri-brush-fill"></i>
+              </div>
+              <h4>Mobile App</h4>
+              <p>introduct All about design and programming</p>
+          </div>
+      </div>
+      <div class="service-box">
+          <div class="box">
+              <div class="service-icon">
+                  <i class="ri-bug-2-fill"></i>
+              </div>
+              <h4>bug fixes</h4>
+              <p>fixes Errors caused by design or programming</p>
+          </div>
+      </div>
+      <div class="service-box">
+          <div class="box">
+              <div class="service-icon">
+                  <i class="ri-search-eye-fill"></i>
+              </div>
+              <h4>seo</h4>
+              <p>Search Engine Optimization</p>
+          </div>
+      </div> -->
+    
+    
+</section>
+<!-- ###### end services section ##########-->

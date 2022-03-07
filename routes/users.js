@@ -4,6 +4,7 @@ const {check,validationResult}=require('express-validator');
 const User=require('../models/User');
 const passport=require('passport');
 const multer=require('multer');
+const io=require('socket.io')();
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -15,6 +16,8 @@ var storage = multer.diskStorage({
 })
 var upload = multer({ storage: storage })
 const Skills=require('../models/Skills');
+const Services=require('../models/services');
+const Msg=require('../models/messages');
 
 //middleware to check if user is login
 isAuthenticated=(req,res,next)=>{
@@ -26,7 +29,7 @@ isAuthenticated=(req,res,next)=>{
 }
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('index', { title: 'Express' });
 });
 //login
 router.get('/login', function(req, res, next) {
@@ -116,7 +119,7 @@ router.get('/skills',isAuthenticated, function(req, res, next) {
 
   })
 });
-router.post('/add', function(req, res, next) {
+router.post('/addskill', function(req, res, next) {
   var skills=new Skills({
     title : req.body.Atitle,
     level: req.body.Alevel,
@@ -125,10 +128,12 @@ router.post('/add', function(req, res, next) {
     if (error) {
       console.log(error);
       res.redirect('skills');
+      
       return;
       
     }
     console.log(result);
+    req.flash('message','save success');
     res.redirect('skills');
     
 
@@ -138,7 +143,7 @@ router.post('/add', function(req, res, next) {
 });
 
 //update skills
-router.post('/update',isAuthenticated, function(req, res, next) {
+router.post('/updateskill',isAuthenticated, function(req, res, next) {
   const ID=req.body.id;
   const updatedSkills={
     title:req.body.title,
@@ -159,7 +164,7 @@ router.post('/update',isAuthenticated, function(req, res, next) {
 });
 
 //delete skills
-router.post('/delete',isAuthenticated, function(req, res, next) {
+router.post('/deleteskill',isAuthenticated, function(req, res, next) {
   const ID=req.body.id;
   console.log(ID);
  
@@ -176,6 +181,21 @@ router.post('/delete',isAuthenticated, function(req, res, next) {
   })
   
 });
+//services
+router.get('/services',isAuthenticated, function(req, res, next) {
+  Services.find({},(error,result)=>{
+    if (error) {
+      console.log(error);
+      res.redirect('services');
+      
+    }
+    res.render('user/services', { serviceitems: result });
+    console.log(result[2]);
+    
+    
+
+  })
+});
 //logout
 router.get('/logout',(req,res)=>{
   req.logOut();
@@ -184,10 +204,45 @@ router.get('/logout',(req,res)=>{
 
 
 //services 
-router.get('/services',(req,res)=>{
+// router.get('/services',(req,res)=>{
   
-  res.render('user/services');
+//   res.render('user/services');
+// });
+router.post('/addservice',upload.single('serviceimg'),(req,res,next)=>{
+  const newService=new Services({
+    title : req.body.servicetitle,
+    description: req.body.servicedesc,
+    image: req.file.filename,
+  });
+  newService.save((error,result)=>{
+    if (error) {
+      console.log(error);
+      res.redirect('/services');
+      return ;
+      
+    }
+    console.log(result);
+    res.redirect('./services')
+
+  });
 })
+
+
+//messages
+router.get('/messages',isAuthenticated, function(req, res, next) {
+  Msg.find({},(error,result)=>{
+    if (error) {
+      console.log(error);
+      res.redirect('messages');
+      
+    }
+    res.render('user/messages', { msglist: result });
+    console.log(result[2]);
+    
+    
+
+  })
+});
 
 
 

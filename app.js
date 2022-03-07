@@ -7,12 +7,7 @@ const mongoose=require('mongoose');
 const session=require('express-session');
 const flash=require('connect-flash');
 const passport=require('passport');
-mongoose.connect('mongodb://localhost:27017/portfolio').then(()=>{
-  console.log('connecting to db is success');
-}).catch((e)=>{
-  console.log(e);
-
-})
+const db=require('./config/database');
 
 
 var indexRouter = require('./routes/index');

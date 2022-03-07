@@ -13,13 +13,28 @@
     <link rel="stylesheet" href="/admin/css/style.css">
 </head>
 <body>
-   <!--start dashboard-->
-   <div class="row sidbare">
-     <aside class="col-md-4">
-        <div class="logo-details text-center">
-          <i class='bx bxl-c-plus-plus'></i>
-          <span class="logo_name"> dashBoard</span>
+  <div class="top-headers">
+    <div class="container">
+      <div class="brand-container">
+        <div class="brand">Sofan<span class="brand-tail">Tec</span></div>
+        <i class="ri-menu-line burgger-icon" id="toggle-icon"></i>
+      </div>
+      <nav>
+        
+        <div class="profile-details">
+          <img src="<%= '/images/' + user.avatar%>" alt="">
+          <span class="admin_name">
+            <% if(user){ %> 
+              <%= user.name %> 
+           <% } %>
+          </span>
         </div>
+      </nav>
+    </div>
+  </div>
+  <!--start dashboard-->
+   <div class="row sidbare">
+     <aside class="col-md-2 nav-list" id="toggle-list">
         <ul class="nav-links">
           <li class="active">
             <a href="dashboard-personal-info.html" >
@@ -32,13 +47,18 @@
             </a>
           </li>
           <li>
-            <a href="dashboard-person-skills.html">
+            <a href="./services">
               <span class="links_name">services</span>
             </a>
           </li>
           <li>
             <a href="dashboard-person-qualification.html">
               <span class="links_name">our Works</span>
+            </a>
+          </li>
+          <li>
+            <a href="./messages">
+              <span class="links_name">Messages</span>
             </a>
           </li>
           <% if(!user) { %> 
@@ -61,49 +81,35 @@
           <% } %> 
         </ul>
      </aside>
-     <div class="dashboard-section col-md-8">
+     <div class="dashboard-section col-md-10">
        <div class="row">
-          <nav>
-            <div class="sidebar-button">
-              <span class="dashboard">dashBoard</span>
-            </div>
-            <div class="profile-details">
-              <img src="<%= '/images/' + user.avatar%>" alt="">
-              <span class="admin_name">
-                <% if(user){ %> 
-                  <%= user.name %> 
-               <% } %>
-              </span>
-            </div>
-          </nav>
+        <h3 style="color: #fff; text-align: center; margin: 20px 0;">personal information</h3>
+          
        </div>
-       <div class="row mt-4">
-         <div class="col-sm-3">
-           <img src="<%= '/images/' + user.avatar%>" style="width: 150px; height: 150px; border-radius: 50%;">
-           <br>
-           <br>
-         </div>
-        <div class="col-md-9 ">
-          <div class="personal-info">
-            <h3>personal information</h3>
-            <form action="/users/uploadavtar" method="post" enctype="multipart/form-data">
-              <input type="text" class="form-control form-control-lg" name="name" placeholder="useremail" value="<% if(user){ %> 
-                <%= user.name %> 
-             <% } %>">
-              <input type="email" class="form-control form-control-lg" name="email" placeholder="user Email" value="<% if(user){ %> 
-                <%= user.email %> 
-                <% } %>">
-              <input type="password" class="form-control form-control-lg" name="password" placeholder="password" value="<% if(user){ %> 
-                <%= user.password %> 
-                <% } %>">
-              <hr>
-              <input type="file" class="avtar" id="avtar" name="avatar">
-              <button type="submit" class="btn btn-primary">upload</button>
-
-            </form>
+        
+      <div class="personal-info">
+        <form action="/users/uploadavtar" method="post" enctype="multipart/form-data" style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 20px;">
+          <div class="col-sm-3">
+            <img src="<%= '/images/' + user.avatar%>" style="width: 150px; height: 150px; border-radius: 20px;">
+            <input type="file" class="avtar" id="avtar" name="avatar" style="margin-top: 20px; color: #eee;">
           </div>
-        </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control form-control-lg" name="name" style="margin: 5px 0; background: #808dad4a; color: #fff;border-radius: 20px; border: 1px solid var(--redColor);" placeholder="useremail" value="<% if(user){ %> 
+              <%= user.name.trim() %> 
+            <% } %>">
+            <input type="email" class="form-control form-control-lg" name="email" style="margin: 5px 0; background: #808dad4a; color: #fff;border-radius: 20px; border: 1px solid var(--redColor);" placeholder="user Email" value="<% if(user){ %> 
+              <%= user.email %> 
+              <% } %>">
+            <input type="password" class="form-control form-control-lg" name="password" style="margin: 5px 0; background: #808dad4a; color: #fff;border-radius: 20px; border: 1px solid var(--redColor);" placeholder="password" value="<% if(user){ %> 
+              <%= user.password %> 
+              <% } %>">
+            <hr>
+            <button type="submit" class="btn btn-primary">upload</button>
+
+          </div>
+        </form>
       </div>
+        
      </div>
    </div>
     

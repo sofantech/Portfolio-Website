@@ -1,0 +1,121 @@
+<!-- ###### start about section ##########-->
+<section class="about" id="about">
+    <div class="main-header">
+        <h2 class="main-title">About Me</h2>
+        <ul class="line">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+    </div>
+    <div class="about-me">
+        <div class="about-image">
+            <div class="img-box">
+                <img src="/images/profile/profile-pic (19).png">
+            </div>
+            <div class="image-shape"></div>
+        </div>
+        <div class="about-content">
+            <div class="title-section">
+                <!-- <h5 class="sub-header">About ?</h5> -->
+                <h3 class="main-title">Why You Hire Me?</h3>
+                <ul class="line">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+            </div>
+            <p>Have sufficient knowledge in web development and software engineering </p>
+            <div class="progress-skils">
+              <% skills.forEach(element => { %>
+              <div class="progress-item">
+                  <div class="progress-header">
+                      <h6 class="progress-item-header"><%= element.title %></h6>
+                      <div class="skill-persentage">
+                          <p>
+                              <span class="counter"><%= element.level %></span>
+                              %
+                          </p>
+                      </div>
+                  </div>
+                  <div class="skill-bar">
+                      <div class="bar-inner">
+                          <div class="bar progress-line" style=<%= "width:"+ element.level +'%' %> data-progres=<%= element.level %>></div>
+                      </div>
+                  </div>
+              </div>
+              <% }) %> 
+
+
+                <!-- <div class="progress-item">
+                    <div class="progress-header">
+                        <h6 class="progress-item-header">Html5 Css3</h6>
+                        <div class="skill-persentage">
+                            <p>
+                                <span class="counter">90</span>
+                                %
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="bar-inner">
+                            <div class="bar progress-line" style="width: 90%;" data-progres="90"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <h6 class="progress-item-header">javascript</h6>
+                        <div class="skill-persentage">
+                            <p>
+                                <span class="counter">70</span>
+                                %
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="bar-inner">
+                            <div class="bar progress-line" style="width: 70%;" data-progres="70"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <h6 class="progress-item-header">Bootstrap</h6>
+                        <div class="skill-persentage">
+                            <p>
+                                <span class="counter">80</span>
+                                %
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="bar-inner">
+                            <div class="bar progress-line" style="width: 80%;" data-progres="80"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <h6 class="progress-item-header">Php</h6>
+                        <div class="skill-persentage">
+                            <p>
+                                <span class="counter">60</span>
+                                %
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="bar-inner">
+                            <div class="bar progress-line" style="width: 60%;" data-progres="80"></div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+        </div>   
+    </div>
+</section>
+<!-- ###### end about section ##########-->

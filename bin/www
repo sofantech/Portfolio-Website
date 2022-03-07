@@ -8,6 +8,7 @@ var app = require('../app');
 var debug = require('debug')('portfolioproject:server');
 var http = require('http');
 
+
 /**
  * Get port from environment and store in Express.
  */
@@ -20,6 +21,8 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+var io =require('socket.io')(server);
+const Msg=require('../models/messages');
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -28,6 +31,64 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+io.on('connection',(socket)=>{
+  // console.log('a user connected');
+  // socket.emit('message','hello world');
+  // socket.on('disconnect',()=>{
+  //   console.log('user disconnected');
+
+  // });
+  socket.on('send-message',({uname},{uemail},{usubject},{umessage})=>{
+    const message=new Msg({
+          senderName:uname,
+          senderEmail:uemail,
+          subject:usubject,
+          description:umessage,
+    
+        });
+        message.save((error,result)=>{
+              if (error) {
+                console.log(error);
+                
+                
+                return;
+                
+              }
+              console.log(result);
+              
+          
+        });
+    console.log(uname,uemail,usubject,umessage);
+    
+    socket.emit('send-message',{uname},{uemail},{usubject},{umessage});
+
+  })
+
+  // socket.on('chatmessage',(name,email,subject,msg)=>{
+  //   const message=new Msg({
+  //     senderName:name,
+  //     senderEmail:email,
+  //     subject:subject,
+  //     description:msg,
+
+  //   });
+  //   message.save((error,result)=>{
+  //     if (error) {
+  //       console.log(error);
+  //       // res.redirect('skills');
+        
+  //       return;
+        
+  //     }
+  //     console.log(result);
+  //     req.flash('message','save success');
+  //     res.redirect('index');
+      
+  
+  //   });
+
+  // })
+})
 
 /**
  * Normalize a port into a number, string, or false.

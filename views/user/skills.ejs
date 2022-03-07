@@ -13,156 +13,165 @@
     <link rel="stylesheet" href="/admin/css/style.css">
 </head>
 <body>
-   <!--start dashboard-->
-   <div class="row sidbare">
-     <aside class="col-md-4">
-        <div class="logo-details text-center">
-          <i class='bx bxl-c-plus-plus'></i>
-          <span class="logo_name"> dashBoard</span>
+  <div class="top-headers">
+    <div class="container">
+      <div class="brand-container">
+        <div class="brand">Sofan<span class="brand-tail">Tec</span></div>
+        <i class="ri-menu-line burgger-icon" id="toggle-icon"></i>
+      </div>
+      <nav>
+        
+        <div class="profile-details">
+          <img src="<%= '/images/' + user.avatar%>" alt="">
+          <span class="admin_name">admin</span>
         </div>
-        <ul class="nav-links">
-          <li>
-            <a href="/users/profile" >
-              <span class="links_name">personal Info</span>
-            </a>
-          </li>
-          <li class="active">
-            <a href="dashboard-person-experince.html">
-              <span class="links_name">skills</span>
-            </a>
-          </li>
-          <li>
-            <a href="dashboard-person-skills.html">
-              <span class="links_name">services</span>
-            </a>
-          </li>
-          <li>
-            <a href="dashboard-person-qualification.html">
-              <span class="links_name">our Works</span>
-            </a>
-          </li>
-          <li class="log_out">
-            <a href="index.html">
-              <span class="links_name">logout </span>
-            </a>
-          </li>
-        </ul>
-     </aside>
-     <div class="dashboard-section col-md-8">
-       <div class="row">
-          <nav>
-            <div class="sidebar-button">
-              <span class="dashboard">dashBoard</span>
-            </div>
-            <div class="profile-details">
-              <img src="<%= '/images/' + user.avatar%>" alt="">
-              <span class="admin_name">admin</span>
-            </div>
-          </nav>
-       </div>
-       <div class="row container person-skills">
-          <h2 class="text-center fs-4"> personal skills</h2>
-          <a type="button" data-bs-toggle="modal" data-bs-target="#addModal">add  skill</a>
-          <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title flex-grow-1" id="exampleModalLabel">Add </h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="/users/add"  method="POST">
-                      <div class="col-12">
-                          <input type="text" class="form-control" name="Atitle" id="title" placeholder="add skill title" >
-                      </div>
-                      <div class="col-12">
-                          <input type="number" class="form-control" name="Alevel" id="level" placeholder="add skill level" >
-                      </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
-                          <button type="submit" class="btn btn-primary">Add</button>
-                      </div>
-                    </form>
-                  
-                </div>
+      </nav>
+    </div>
+  </div>
+   <!--start dashboard-->
+  <div class="row sidbare">
+    <aside class="col-md-2 nav-list" id="toggle-list">
+      <ul class="nav-links">
+        <li>
+          <a href="/users/profile" >
+            <span class="links_name">personal Info</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="./skills">
+            <span class="links_name">skills</span>
+          </a>
+        </li>
+        <li>
+          <a href="./services" >
+            <span class="links_name">services</span>
+          </a>
+        </li>
+        <li>
+          <a href="dashboard-person-qualification.html">
+            <span class="links_name">our Works</span>
+          </a>
+        </li>
+        <li>
+          <a href="./messages">
+            <span class="links_name">Messages</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="/users/logout">
+            <span class="links_name">logout </span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <div class="dashboard-section col-md-10">
+      <div class="row">
+        <a type="button" data-bs-toggle="modal" data-bs-target="#addModal" style="color: #808DAD; margin: 20px 0;">add  skill</a>
+        
+        
+      </div>
+      <div class="row container person-skills">
+        
+        
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title flex-grow-1" id="exampleModalLabel">Add </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form action="/users/addskill"  method="POST">
+                    <div class="col-12">
+                        <input type="text" class="form-control" name="Atitle" id="title" placeholder="add skill title" >
+                    </div>
+                    <div class="col-12">
+                        <input type="number" class="form-control" name="Alevel" id="level" placeholder="add skill level" >
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                  </form>
                 
               </div>
+              
             </div>
           </div>
-          <div class="row">
-            <ol class="list-group personal-info-list">
-              <% items.forEach(element => { %> 
-              <li class="list-group-item d-flex justify-content-between align-items-start">
-                <div class="content w-100 d-flex justify-content-between">
-                  <div class="info-content-txt">
-                    <div class="fw-bold">Skills Name : <%= element.title %> </div>
-                    <div class="fw-small">Skills Level : <%= element.level %>  %</div>
-                  </div>
-                  <img src="<%= '/images/' + user.avatar%>" alt="" style="width: 100px; height: 100px; border-radius: 50%;">
-                  <div class="op-btn d-flex flex-column align-items-center justify-content-around">
-                    <span class="ri-pencil-fill update-btn" type="button"  data-bs-toggle="modal" data-bs-target=#<%= element.title %> ></span>
-                    <span class="ri-delete-bin-5-line delete-btn " type="button"  data-bs-toggle="modal" data-bs-target=#<%= element.title+"hadi" %>></span>
-                  </div>
-                </div>
-                <div class="modal fade" id=<%= element.title %>  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title flex-grow-1" id="exampleModalLabel">update </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <form action="/users/update"  method="POST">
-                          <div class="col-12">
-                            <input type="text" class="form-control" name="id" id="id" placeholder="id" value=<%=element._id %>  >
-                          </div>
-                          <div class="col-12">
-                              <input type="text" class="form-control" name="title" id="title" placeholder="skill title" value=<%=element.title %>  >
-                          </div>
-                          <div class="col-12">
-                              <input type="number" class="form-control" name="level" id="level" placeholder="skill level" value=<%= element.level %> >
-                          </div>
-                          <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
-                              <button type="submit" class="btn btn-primary">update</button>
-                          </div>
-                        </form>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="modal fade" id=<%= element.title+"hadi" %> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title flex-grow-1" id="exampleModalLabel">delete skill</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <p>Are you sure you want to delete this skill?</p>
-                        <form action="/users/delete"  method="POST">
-                          <div class="col-12">
-                            <input type="text" class="form-control" name="id" id="id" placeholder="id" value=<%=element._id %>  >
-                          </div>
-                          <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
-                              <button type="submit" class="btn btn-primary">delete</button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <% }); %> 
-              
-              
-            </ol>
-          </div>
         </div>
-     </div>
-   </div>
+        <div class="row">
+          <ol class="list-group personal-info-list">
+            <% items.forEach(element => { %> 
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="content w-100 d-flex justify-content-between" style="align-items: center;">
+                <div class="info-content-txt">
+                  <div class="fw-bold">Skills Name : <%= element.title %> </div>
+                  <div class="fw-small">Skills Level : <%= element.level %>  %</div>
+                </div>
+                <div class="op-btn d-flex flex-column align-items-center justify-content-around">
+                  <span class="ri-pencil-fill update-btn" type="button"  data-bs-toggle="modal" data-bs-target=#<%="update"+(element.id).toString(16) %> ></span>
+                  <span class="ri-delete-bin-5-line delete-btn " type="button"  data-bs-toggle="modal" data-bs-target=#<%="hadi"+element.id %>></span>
+                </div>
+              </div>
+              <div class="modal fade" id=<%="update"+(element.id).toString(16) %>  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title flex-grow-1" id="exampleModalLabel">update </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="/users/updateskill"  method="POST">
+                        <div class="col-12">
+                          <input type="text" class="form-control" name="id" id="id" placeholder="id" value=<%=element._id %>  >
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control" name="title" id="title" placeholder="skill title" value=<%=element.title %>  >
+                        </div>
+                        <div class="col-12">
+                            <input type="number" class="form-control" name="level" id="level" placeholder="skill level" value=<%= element.level %> >
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+                            <button type="submit" class="btn btn-primary">update</button>
+                        </div>
+                      </form>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id=<%="hadi"+element.id %> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title flex-grow-1" id="exampleModalLabel">delete skill</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Are you sure you want to delete this skill?</p>
+                      <form action="/users/deleteskill"  method="POST">
+                        <div class="col-12">
+                          <input type="text" hidden class="form-control" name="id" id="id" placeholder="id" value=<%=element._id %>  >
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+                            <button type="submit" class="btn btn-primary">delete</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <% }); %> 
+            
+            
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
     
     <!--end dashboard-->
 

@@ -732,6 +732,7 @@ li.active a
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
     background: #808dad4a;
+    color: #fff;
 }
 .contact .form-box form textarea
 {

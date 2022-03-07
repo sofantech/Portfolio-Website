@@ -1,42 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="hadi ahmed">
-    <meta name="description" content="my Portfolio">
-    <meta name="keywards" content="html , css , js">
-    <link href="/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/fonts/remixicon.css">
-    <title>Portfolio</title>
-</head>
-<body>
-  <header class="header header-with-scrol">
-      
-      <div class="logo">
-          <a>Sofan<span class="tech">Tec</span></a>
-      </div>
-      <nav class="navBar">
-          <ul>
-              <li data-hr="#home" class="active"><a href="#home">Home <span></span></a></li>
-              <li data-hr="#about"><a href="#about">About <span></span></a></li>
-              <li data-hr="#services"><a href="#services">Services <span></span></a></li>
-              <li data-hr="#ourWorks"><a href="#ourWorks">our works <span></span></a></li>
-              <li data-hr="#contact"><a href="#contact">Contact Me <span></span></a></li>
-          </ul>
-      </nav>
-      <div class="menu-btn">
-          <i class="ri-menu-line"></i>
-      </div>
-      <div class="phoneNumber">
-          <a href="/users/login">login</a>
-          <span class="seprator">|</span>
-          <i class="ri-phone-fill"></i>
-          <a class="">+967 777 607 485</a>
-      </div>
-      
-  </header>
+<%- include('partals/header.ejs') -%>
+<%-  include('partals/navbar.ejs') -%>
+<script src="/socket.io/socket.io.js"></script>
+
   <!-- ###### start home section ##########-->
   <section class="home" id="home">
       <div class="dark-sun-mode">
@@ -48,7 +13,7 @@
               <h4>hello </h4>
           </div>
           
-          <h2>I'M HADI AHMED</h2>
+          <h2>I'M Hadi Ahmed</h2>
           <P>Full Stack Web Developer</P>
           <div class="button">
               <button class="btn">Hire Me</button>
@@ -59,158 +24,8 @@
           <img src="/images/profile/profile-pic (14).png" alt="Eng.hadi ahmed">
       </div>
   </section>
-  <!-- ###### start home section ##########-->
-
-  <!-- ###### start about section ##########-->
-  <section class="about" id="about">
-      <div class="main-header">
-          <h2 class="main-title">About Me</h2>
-          <ul class="line">
-              <li></li>
-              <li></li>
-              <li></li>
-          </ul>
-
-      </div>
-      <div class="about-me">
-          <div class="about-image">
-              <div class="img-box">
-                  <img src="/images/profile/profile-pic (19).png">
-              </div>
-              <div class="image-shape"></div>
-          </div>
-          <div class="about-content">
-              <div class="title-section">
-                  <!-- <h5 class="sub-header">About ?</h5> -->
-                  <h3 class="main-title">Why You Hire Me?</h3>
-                  <ul class="line">
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                  </ul>
-  
-              </div>
-              <p>Have sufficient knowledge in web development and software engineering </p>
-              <div class="progress-skils">
-                  <div class="progress-item">
-                      <div class="progress-header">
-                          <h6 class="progress-item-header">Html5 Css3</h6>
-                          <div class="skill-persentage">
-                              <p>
-                                  <span class="counter">90</span>
-                                  %
-                              </p>
-                          </div>
-                      </div>
-                      <div class="skill-bar">
-                          <div class="bar-inner">
-                              <div class="bar progress-line" style="width: 90%;" data-progres="90"></div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="progress-item">
-                      <div class="progress-header">
-                          <h6 class="progress-item-header">javascript</h6>
-                          <div class="skill-persentage">
-                              <p>
-                                  <span class="counter">70</span>
-                                  %
-                              </p>
-                          </div>
-                      </div>
-                      <div class="skill-bar">
-                          <div class="bar-inner">
-                              <div class="bar progress-line" style="width: 70%;" data-progres="70"></div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="progress-item">
-                      <div class="progress-header">
-                          <h6 class="progress-item-header">Bootstrap</h6>
-                          <div class="skill-persentage">
-                              <p>
-                                  <span class="counter">80</span>
-                                  %
-                              </p>
-                          </div>
-                      </div>
-                      <div class="skill-bar">
-                          <div class="bar-inner">
-                              <div class="bar progress-line" style="width: 80%;" data-progres="80"></div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="progress-item">
-                      <div class="progress-header">
-                          <h6 class="progress-item-header">Php</h6>
-                          <div class="skill-persentage">
-                              <p>
-                                  <span class="counter">60</span>
-                                  %
-                              </p>
-                          </div>
-                      </div>
-                      <div class="skill-bar">
-                          <div class="bar-inner">
-                              <div class="bar progress-line" style="width: 60%;" data-progres="80"></div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-  
-          </div>   
-      </div>
-  </section>
-  <!-- ###### end about section ##########-->
-
-  <!-- ###### start services section ##########-->
-  <section class="services" id="services">
-      <div class="heding">
-          <span>our services</span>
-          <h2>We offer All about design and programming</h2>
-      </div>
-      <div class="box-container">
-          <div class="service-box">
-              <div class="box">
-                  <div class="service-icon">
-                      <i class="ri-macbook-fill"></i>
-                  </div>
-                  <h4>web design</h4>
-                  <p>Web site design and programming</p>
-              </div>
-          </div>
-          <div class="service-box">
-              <div class="box">
-                  <div class="service-icon">
-                      <i class="ri-brush-fill"></i>
-                  </div>
-                  <h4>Mobile App</h4>
-                  <p>introduct All about design and programming</p>
-              </div>
-          </div>
-          <div class="service-box">
-              <div class="box">
-                  <div class="service-icon">
-                      <i class="ri-bug-2-fill"></i>
-                  </div>
-                  <h4>bug fixes</h4>
-                  <p>fixes Errors caused by design or programming</p>
-              </div>
-          </div>
-          <div class="service-box">
-              <div class="box">
-                  <div class="service-icon">
-                      <i class="ri-search-eye-fill"></i>
-                  </div>
-                  <h4>seo</h4>
-                  <p>Search Engine Optimization</p>
-              </div>
-          </div>
-      </div>
-      
-  </section>
-  <!-- ###### end services section ##########-->
-
+  <%- include('./skills.ejs') -%>
+  <%-  include('./services.ejs') -%>
   <!-- ###### start our work section ##########-->
   <section class="our-work" id="ourWorks">
       <div class="main-header">
@@ -265,6 +80,7 @@
                   <a href="https://LinkedIn.com/hadi Ahmed" class="ri-linkedin-fill"></a>
               </div>
           </div>
+          <div class="msg-container" id="msg-container"></div>
           <div class="form-box">
               <form id="form">
                   <input class="" id="userName" type="text" placeholder="Your Name">
@@ -280,14 +96,31 @@
           </div>
       </div>
   </section>
-    <!-- ###### end contact section ##########-->
-    <!-- ###### start footer ##########-->
-    <footer class="footer" id="footer">
-        <p>All Right Recerved 2022 &copy;</p>
-    </footer>
-    <!-- ###### end footer##########-->
-    <script src="/js/script.js">
-  </script>
-</body>
+<script>
+    const socket=window.io();
+    const msgform=document.querySelector('#form');
+    const usName=document.querySelector('#userName');
+    const usemail=document.querySelector('#email');
+    const ussubject=document.querySelector('#subject');
+    const usmessage=document.querySelector('#message');
+    const msg_container=document.querySelector('#msg-container');
+    msgform.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        const uname=usName.value;
+        const uemail=usemail.value;
+        const usubject=ussubject.value;
+        const umessage=usmessage.value;
+        socket.emit('send-message',{uname},{uemail},{usubject},{umessage})
+        usName.value='';
+        usemail.value='';
+        ussubject.value='';
+        usmessage.value='';
 
-</html>
+    })
+    socket.on('send-message',({uname},{uemail},{usubject},{umessage}) =>{
+        console.log(uname,uemail,usubject,umessage);
+        msg_container.innerHTML += `<p>${uname} ${uemail} ${usubject} ${umessage} </p>`;
+
+    })
+</script>
+  <%- include('./partals/footer.ejs') -%>
